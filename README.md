@@ -113,11 +113,11 @@ These contain step-by-step logs used for the Gantt chart visualization in the pa
 If you use this code in your work, please cite our paper:
 
 ```
-@article{your_citation_entry,
-  title={Autoregressive DRL for Multi-Robot Scheduling in Semiconductor Cluster Tools},
-  author={Your Name and Others},
-  journal={...},
-  year={2024}
+@unpublished{cho2025autoregressive,
+  title     = {Autoregressive DRL for Multi-Robot Scheduling in Semiconductor Cluster Tools},
+  author    = {Soo-Hwan Cho},
+  note      = {Manuscript submitted for review at INDIN 2025},
+  year      = {2025}
 }
 ```
 ---
