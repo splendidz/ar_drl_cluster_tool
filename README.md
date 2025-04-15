@@ -120,9 +120,20 @@ If you use this code in your work, please cite our paper:
   year={2024}
 }
 ```
+---
+
+## Author
+
+This code was developed as part of the research presented in the paper  
+**"Autoregressive DRL for Multi-Robot Scheduling in Semiconductor Cluster Tools"**.
+
+For questions or collaboration inquiries, please contact:  
+**Soo-Hwan Cho** – soohwancho@korea.ac.kr  
+Affiliation: Korea University, High Performance Intelligence Computing (HPIC) Lab
 
 ---
 
 ## License
 
 This project is licensed under the terms described in the `LICENSE` file.
+
