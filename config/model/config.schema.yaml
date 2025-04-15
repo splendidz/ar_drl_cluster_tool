@@ -1,0 +1,97 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "batch_size": {
+      "default": 256,
+      "title": "Batch Size",
+      "type": "integer"
+    },
+    "num_envs": {
+      "default": 8,
+      "title": "Num Envs",
+      "type": "integer"
+    },
+    "total_timestep": {
+      "default": 8000000,
+      "title": "Total Timestep",
+      "type": "integer"
+    },
+    "gamma": {
+      "default": 0.99,
+      "title": "Gamma",
+      "type": "number"
+    },
+    "learning_rate": {
+      "default": 5e-05,
+      "title": "Learning Rate",
+      "type": "number"
+    },
+    "rollout_n_steps": {
+      "default": 256,
+      "title": "Rollout N Steps",
+      "type": "integer"
+    },
+    "ppo_n_epochs": {
+      "default": 10,
+      "title": "Ppo N Epochs",
+      "type": "integer"
+    },
+    "ppo_gae_lambda": {
+      "default": 0.95,
+      "title": "Ppo Gae Lambda",
+      "type": "number"
+    },
+    "ppo_clip_range": {
+      "default": 0.2,
+      "title": "Ppo Clip Range",
+      "type": "number"
+    },
+    "ppo_max_grad_norm": {
+      "default": 0.5,
+      "title": "Ppo Max Grad Norm",
+      "type": "number"
+    },
+    "ppo_ent_coef": {
+      "default": 0.0,
+      "title": "Ppo Ent Coef",
+      "type": "number"
+    },
+    "save_step_log": {
+      "default": true,
+      "title": "Save Step Log",
+      "type": "boolean"
+    },
+    "eval_freq": {
+      "default": 2000,
+      "title": "Eval Freq",
+      "type": "integer"
+    },
+    "eval_episode_count": {
+      "default": 10,
+      "title": "Eval Episode Count",
+      "type": "integer"
+    },
+    "wandb_in_model": {
+      "default": false,
+      "title": "Wandb In Model",
+      "type": "boolean"
+    },
+    "wandb_in_env": {
+      "default": false,
+      "title": "Wandb In Env",
+      "type": "boolean"
+    },
+    "wandb_project_name": {
+      "default": "rl_eq",
+      "title": "Wandb Project Name",
+      "type": "string"
+    },
+    "wandb_graph_name": {
+      "default": "",
+      "title": "Wandb Graph Name",
+      "type": "string"
+    }
+  },
+  "title": "Args",
+  "type": "object"
+}

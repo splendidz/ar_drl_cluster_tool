@@ -1,0 +1,236 @@
+{
+	"args": 
+		{	"pick_and_place_time": 1.5,
+			"unit_max_padding": 0,
+			"transport_max_padding": 0,
+			"episode_done_time_sec": 1000,
+			"random_init_state_count": 0,
+			"enable_pair_action": 0,
+			"init_full_wafer": 1,
+			"wafer_count": 1000,
+			"episode_log_periodic_count": 0,
+			"timestep_interval_sec": 1.0,
+			"use_sequential_action_selection": 1,
+			"reward_functions": 
+			{
+				"reward_when_each_wafer_done": 1,
+				"reward_for_prediction_move": 0.0,
+				"reward_wafer_progressing": 0.01,
+				"reward_parallel_processing": 0.000,
+				"penalty_pending_time": 0.0,
+				"penalty_idle_move": 0.0000
+			}
+		},
+	
+	"unit_list":  {
+		"#attribute": ["type", "position", "process_time"]		
+		, "LoadPort": ["loadport", [100, 1000, 0], 0]
+		, "LDBuf.1": ["unit", [800, 1300, 0], 0]
+		, "LDBuf.2": ["unit", [800, 1200, 0], 0]
+		, "LDBuf.3": ["unit", [800, 1100, 0], 0]
+		, "LDBuf.4": ["unit", [800, 1000, 0], 0]
+		, "UDBuf.1": ["unit", [800, 900, 0], 0]
+		, "UDBuf.2": ["unit", [800, 800, 0], 0]
+		, "UDBuf.3": ["unit", [800, 700, 0], 0]
+		, "UDBuf.4": ["unit", [800, 600, 0], 0]		
+		, "UnitA.2_1": ["unit", [1500, 1000, 0], 60]
+		, "UnitA.2_2": ["unit", [1500, 800, 0], 60]
+		, "UnitA.3_1": ["unit", [1500, 1600, 0], 60]
+		, "UnitA.3_2": ["unit", [1500, 1400, 0], 60]
+		, "UnitA.4_1": ["unit", [1500, 2200, 0], 60]
+		, "UnitA.4_2": ["unit", [1500, 2000, 0], 60]				
+		, "UnitB.2_1": ["unit", [2000, 1000, 0], 60]
+		, "UnitB.2_2": ["unit", [2000, 800, 0], 60]
+		, "UnitB.3_1": ["unit", [2000, 1600, 0], 60]
+		, "UnitB.3_2": ["unit", [2000, 1400, 0], 60]
+		, "UnitB.4_1": ["unit", [2000, 2200, 0], 60]
+		, "UnitB.4_2": ["unit", [2000, 2000, 0], 60]				
+		, "UnitC.2_1": ["unit", [2500, 1000, 0], 60]
+		, "UnitC.2_2": ["unit", [2500, 800, 0], 60]
+		, "UnitC.3_1": ["unit", [2500, 1600, 0], 60]
+		, "UnitC.3_2": ["unit", [2500, 1400, 0], 60]
+		, "UnitC.4_1": ["unit", [2500, 2200, 0], 60]
+		, "UnitC.4_2": ["unit", [2500, 2000, 0], 60]		
+		, "UnitD.2_1": ["unit", [3000, 1000, 0], 60]
+		, "UnitD.2_2": ["unit", [3000, 800, 0], 60]
+		, "UnitD.3_1": ["unit", [3000, 1600, 0], 60]
+		, "UnitD.3_2": ["unit", [3000, 1400, 0], 60]
+		, "UnitD.4_1": ["unit", [3000, 2200, 0], 60]
+		, "UnitD.4_2": ["unit", [3000, 2000, 0], 60]
+		, "UnitE.1": ["unit", [4000, 1400, 0], 100]
+		, "UnitE.2": ["unit", [4000, 1300, 0], 100]
+		, "UnitE.3": ["unit", [4000, 1200, 0], 100]
+		, "UnitE.4": ["unit", [4000, 1100, 0], 100]
+		, "UnitE.5": ["unit", [4000, 1000, 0], 100]
+		, "UnitE.6": ["unit", [4000, 900, 0], 100]
+		, "UnitE.7": ["unit", [4000, 800, 0], 100]
+		, "UnitE.8": ["unit", [4000, 700, 0], 100]
+		, "UnitE.9": ["unit", [4000, 600, 0], 100]
+		, "UnitE.10": ["unit", [4000, 500, 0], 100]		
+		, "UnitF.1_1": ["unit", [2500, 400, 0], 30]
+		, "UnitF.1_2": ["unit", [2500, 200, 0], 30]
+		, "UnitF.1_3": ["unit", [3000, 400, 0], 30]
+		, "UnitF.1_4": ["unit", [3000, 200, 0], 30]		
+		, "UnitG.1_1": ["unit", [1500, 400, 0], 20]
+		, "UnitG.1_2": ["unit", [1500, 200, 0], 20]
+		, "UnitG.1_3": ["unit", [2000, 400, 0], 20]
+		, "UnitG.1_4": ["unit", [2000, 200, 0], 20]
+	},
+	"transport_robot_list":{
+		"#attribute": ["arm_count", "speed_mm/s", "position"],
+		"IDX": [2, 700, [ 400, 1000, 0 ]],
+		"MLR": [2, 700, [ 1000, 1200, 0 ]],
+		"MUR": [2, 700, [ 1000, 800, 0 ]],
+		"MTR1": [2, 700, [ 1500, 0, 0 ]],
+		"MTR2": [2, 700, [ 1500, 600, 0 ]],
+		"MTR3": [2, 700, [ 1500, 1200, 0 ]],
+		"MTR4": [2, 700, [ 1500, 1800, 0 ]],
+		"ILR": [2, 700, [ 3500, 1200, 0 ]],
+		"IUR": [2, 700, [ 3500, 800, 0 ]]
+	}
+	,
+	"waypoint_list": {
+		"#attribute": ["unit_list"],
+		"1": ["LoadPort"],
+		"2": ["LDBuf.*"],
+		"3": ["UnitA.*"],
+		"4": ["UnitB.*"],
+		"5": ["UnitC.*"],
+		"6": ["UnitD.*"],
+		"7": ["UnitE.*"],
+		"8": ["UnitF.*"],
+		"9": ["UnitG.*"],
+		"10": ["UDBuf.*"],
+		"11": ["LoadPort"]
+	},
+	"action_list":
+	{
+		"#attribute": ["command", "arm_index", "unit_list"],
+		"IDX":[
+			["no_op", 0, [""]],
+		    ["pick", 1, ["LoadPort", "UDBuf.*"]],
+		    ["pick", 2, ["LoadPort", "UDBuf.*"]],
+		    ["place", 1, ["LoadPort", "LDBuf.*"]],
+		    ["place", 2, ["LoadPort", "LDBuf.*"]],
+		    ["move", 0, ["LoadPort", "UDBuf.*", "LDBuf.*"]]
+		],
+		"MLR":[
+			["no_op", 0, [""]],
+		    ["pick", 1, ["LDBuf.*"]],
+		    ["pick", 2, ["LDBuf.*"]],
+		    ["place", 1, ["UnitA.*"]],
+		    ["place", 2, ["UnitA.*"]],
+		    ["move", 0, ["LDBuf.*", "UnitA.*"]]
+		],
+		"MUR":[
+			["no_op", 0, [""]],
+		    ["pick", 1, ["UnitG.*"]],
+		    ["pick", 2, ["UnitG.*"]],
+		    ["place", 1, ["UDBuf.*"]],
+		    ["place", 2, ["UDBuf.*"]],
+		    ["move", 0, ["UDBuf.*", "UnitG.*"]]
+		],
+		"MTR1":[
+			["no_op", 0, [""]],
+		    ["pick", 1, ["UnitF.*"]],
+		    ["pick", 2, ["UnitF.*"]],
+		    ["place", 1, ["UnitG.*"]],
+		    ["place", 2, ["UnitG.*"]],
+		    ["move", 0, ["UnitF.*", "UnitG.*"]]
+		],
+		"MTR2":[
+			["no_op", 0, [""]],
+		    ["pick", 1, ["UnitA.2_*", "UnitB.2_*", "UnitC.2_*"]],
+		    ["pick", 2, ["UnitA.2_*", "UnitB.2_*", "UnitC.2_*"]],
+		    ["place", 1, ["UnitB.2_*", "UnitC.2_*", "UnitD.2_*"]],
+		    ["place", 2, ["UnitB.2_*", "UnitC.2_*", "UnitD.2_*"]],
+		    ["move", 0, ["UnitA.2_*", "UnitB.2_*", "UnitC.2_*", "UnitD.2_*"]]
+		],
+		"MTR3":[
+			["no_op", 0, [""]],
+		    ["pick", 1, ["UnitA.3_*", "UnitB.3_*", "UnitC.3_*"]],
+		    ["pick", 2, ["UnitA.3_*", "UnitB.3_*", "UnitC.3_*"]],
+		    ["place", 1, ["UnitB.3_*", "UnitC.3_*", "UnitD.3_*"]],
+		    ["place", 2, ["UnitB.3_*", "UnitC.3_*", "UnitD.3_*"]],
+		    ["move", 0, ["UnitA.3_*", "UnitB.3_*", "UnitC.3_*", "UnitD.3_*"]]
+		],
+		"MTR4":[
+			["no_op", 0, [""]],
+		    ["pick", 1, ["UnitA.4_*", "UnitB.4_*", "UnitC.4_*"]],
+		    ["pick", 2, ["UnitA.4_*", "UnitB.4_*", "UnitC.4_*"]],
+		    ["place", 1, ["UnitB.4_*", "UnitC.4_*", "UnitD.4_*"]],
+		    ["place", 2, ["UnitB.4_*", "UnitC.4_*", "UnitD.4_*"]],
+		    ["move", 0, ["UnitA.4_*", "UnitB.4_*", "UnitC.4_*", "UnitD.4_*"]]
+		],
+		"ILR":[
+			["no_op", 0, [""]],
+		    ["pick", 1, ["UnitD.*"]],
+		    ["pick", 2, ["UnitD.*"]],
+		    ["place", 1, ["UnitE.*"]],
+		    ["place", 2, ["UnitE.*"]],
+		    ["move", 0, ["UnitD.*", "UnitE.*"]]
+		],
+		"IUR":[
+			["no_op", 0, [""]],
+		    ["pick", 1, ["UnitE.*"]],
+		    ["pick", 2, ["UnitE.*"]],
+		    ["place", 1, ["UnitF.*"]],
+		    ["place", 2, ["UnitF.*"]],
+		    ["move", 0, ["UnitE.*", "UnitF.*"]]
+		]
+		
+	},
+	"deadlock": [
+		{
+			"transport": [ "MTR4.1", "MTR4.2" ],
+			"unit": ["UnitD.4_*"],
+			"waypoint": [5]
+		},
+		{
+			"transport": [ "MTR4.1", "MTR4.2" ],
+			"unit": ["UnitC.4_*"],
+			"waypoint": [4]
+		},
+		{
+			"transport": [ "MTR4.1", "MTR4.2" ],
+			"unit": ["UnitB.4_*"],
+			"waypoint": [3]
+		},
+		{
+			"transport": [ "MTR3.1", "MTR3.2" ],
+			"unit": ["UnitD.3_*"],
+			"waypoint": [5]
+		},
+		{
+			"transport": [ "MTR3.1", "MTR3.2" ],
+			"unit": ["UnitC.3_*"],
+			"waypoint": [4]
+		},
+		{
+			"transport": [ "MTR3.1", "MTR3.2" ],
+			"unit": ["UnitB.3_*"],
+			"waypoint": [3]
+		},
+		{
+			"transport": [ "MTR2.1", "MTR2.2" ],
+			"unit": ["UnitD.2_*"],
+			"waypoint": [5]
+		},
+		{
+			"transport": [ "MTR2.1", "MTR2.2" ],
+			"unit": ["UnitC.2_*"],
+			"waypoint": [4]
+		},
+		{
+			"transport": [ "MTR2.1", "MTR2.2" ],
+			"unit": ["UnitB.2_*"],
+			"waypoint": [3]
+		},		
+		{
+			"transport": ["IDX.1", "IDX.2"],
+			"unit": ["LDBuf.*"],
+			"waypoint": [1]
+		}
+		
+	]
+}
