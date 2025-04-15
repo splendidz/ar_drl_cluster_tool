@@ -1,0 +1,85 @@
+{
+	"args": 
+		{	"pick_and_place_time": 1.5,
+			"unit_max_padding": 0,
+			"transport_max_padding": 0,
+			"episode_done_time_sec": 1000,
+			"random_init_state_count": 0,
+			"enable_pair_action": 0,
+			"init_full_wafer": 0,
+			"wafer_count": 1000,
+			"episode_log_periodic_count": 0,
+			"timestep_interval_sec": 1.0,
+			"use_sequential_action_selection": 1,
+			"reward_functions": 
+			{
+				"reward_when_each_wafer_done": 1,
+				"reward_for_prediction_move": 0.0,
+				"reward_wafer_progressing": 0.01,
+				"reward_parallel_processing": 0.000,
+				"penalty_pending_time": 0.0,
+				"penalty_idle_move": 0.0000
+			}
+		},
+	
+	"unit_list":  {
+		"#attribute": ["type", "position", "process_time"]		
+		, "LoadPort": ["loadport", [0, 1000, 0], 0]
+		, "Airlock_Entry": ["airlock", [1500, 1400, 0], 10.0]
+		, "Airlock_Exit": ["airlock", [1500, 600, 0], 10.0]
+		, "Chamber1.1": ["unit", [2500, 2000, 0], 45.0]
+		, "Chamber1.2": ["unit", [3500, 1500, 0], 45.0]
+		, "Chamber2.1": ["unit", [3500, 500, 0], 65.0]
+		, "Chamber2.2": ["unit", [2500, 0, 0], 65.0]
+	},
+	"transport_robot_list":{
+		"#attribute": ["arm_count", "speed_mm/s", "position"],
+		"ATM": [1, 1000, [ 1000, 1000, 0 ]],
+		"VTM": [2, 1000, [ 2000, 1000, 0 ]]
+	}
+	,
+	"waypoint_list": {
+		"#attribute": ["unit_list"],
+		"1": ["LoadPort"],
+		"2": ["Airlock_Entry"],
+		"3": ["Chamber1.*"],
+		"4": ["Chamber2.*"],
+		"5": ["Airlock_Exit"],
+		"6": ["LoadPort"]
+	},
+	"action_list":
+	{
+		"#attribute": ["command", "arm_index", "unit_list"],
+		"ATM":[
+			["no_op", 0, [""]],
+		    ["pick", 1, ["LoadPort", "Airlock_Exit"]],
+		    ["place", 1, ["LoadPort", "Airlock_Entry"]],
+		    ["move", 0, ["LoadPort", "Airlock_Exit", "Airlock_Entry"]]
+		],
+		"VTM":[
+			["no_op", 0, [""]],
+		    ["pick", 1, ["Airlock_Entry", "Chamber*"]],
+		    ["pick", 2, ["Airlock_Entry", "Chamber*"]],
+		    ["place", 1, ["Airlock_Exit", "Chamber*"]],
+		    ["place", 2, ["Airlock_Exit", "Chamber*"]],
+		    ["move", 0, ["Airlock_*", "Chamber*"]]
+		]		
+	},
+	"deadlock": [
+		{
+			"transport": [ "ATM.1"],
+			"unit": ["Airlock_Entry", "Chamber*"],
+			"waypoint": [1]
+		},
+		{
+			"transport": [ "VTM.1", "VTM.2" ],
+			"unit": ["Chamber1.*"],
+			"waypoint": [2]
+		},
+		{
+			"transport": [ "VTM.1", "VTM.2" ],
+			"unit": ["Chamber2.*"],
+			"waypoint": [3]
+		}	
+	]
+}

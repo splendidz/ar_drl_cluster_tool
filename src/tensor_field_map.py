@@ -1,0 +1,47 @@
+from s_simulator_config import S_SimConfInst
+
+
+class UNIT:
+
+    REQUIRED_TIMESTEP = 0
+    CURR_WAFER_WAYPOINT = 1
+    READY_TO_PICK = 2
+    READY_TO_PLACE = 3
+    WAFER_ID = 4
+    POS_X = 5
+    POS_Y = 6
+    POS_Z = 7
+
+    LENGTH = 8
+
+
+class TRANSPORT:
+
+    SET_ACTION_FLAG = 0
+    REQUIRED_TIMESTEP = 1
+    OH_CMD_TYPE_NOOP = 2
+    OH_CMD_TYPE_PICK = 3
+    OH_CMD_TYPE_PLACE = 4
+    OH_CMD_TYPE_MOVE = 5
+    CMD_TARGET_POS_X = 6
+    CMD_TARGET_POS_Y = 7
+    CMD_TARGET_POS_Z = 8
+    CURRENT_POS_X = 9
+    CURRENT_POS_Y = 10
+    CURRENT_POS_Z = 11
+    READY_TO_PICK_ARM_1 = 12
+    READY_TO_PICK_ARM_2 = 13
+    READY_TO_PLACE_ARM_1 = 14
+    READY_TO_PLACE_ARM_2 = 15
+    CURRENT_WAFER_WAYPOINT_ARM_1 = 16
+    CURRENT_WAFER_WAYPOINT_ARM_2 = 17
+    WAFER_ID_ARM1 = 18
+    WAFER_ID_ARM2 = 19
+
+    LENGTH = 20
+
+
+class GLOBAL:
+    TIME_STEP = 0
+
+    LENGTH = 1
