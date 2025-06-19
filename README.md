@@ -116,7 +116,7 @@ If you use this code in your work, please cite our paper:
 @unpublished{cho2025autoregressive,
   title     = {Autoregressive DRL for Multi-Robot Scheduling in Semiconductor Cluster Tools},
   author    = {Soo-Hwan Cho},
-  note      = {Manuscript submitted for review at INDIN 2025},
+  note      = {Manuscript submitted for camera-ready at IEEE-ISIE 2025},
   year      = {2025}
 }
 ```
